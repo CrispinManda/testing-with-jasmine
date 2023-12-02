@@ -1,0 +1,46 @@
+<body class="bg-dark">
+    <app-navbar></app-navbar>
+
+    <section style="background-image: url('https://image.kilimall.com/kenya/shop/activity/x9ya31ad2Eqv3wcZeReJK1GPhDI7kKxomEHScfK8.gif');">
+
+        <div class="container m-2 w-[60vw] block mx-auto justify-center items-center">
+            <h1 style="color: white;">Categpry 1</h1>
+            <div class="flex flex-wrap">
+                
+                <div *ngFor="let product of products; let i = index" class="flex-shrink-0 w-64 bg-white mr-4 rounded-lg shadow-md m-2 ">
+                  <img src="{{product.image}}" alt="Product 1" class="w-full h-40 object-cover mb-4 rounded-md">
+                  
+                    <div class="p-2">
+                        <h3 class="text-lg font-bold mb-2">{{product.name}}</h3>
+                        <p class="text-gray-700">{{product.description.slice(0,20)}}</p>
+                        <div class="mt-2 flex items-center">
+                          <span class="text-green-500 font-bold mr-2">{{product.price}}</span>
+                          <span class="text-gray-500 line-through">$59.99</span>
+                        </div>
+                        <div class="flex items-center mt-2">
+                          <div class="text-yellow-500">
+                            ★★★★☆ <!-- Replace with your star rating logic -->
+                          </div>
+                          <span class="text-gray-500 ml-2">(120 reviews)</span>
+                        </div>
+                        <button (click)="addToCart(product)">Add to Cart</button>
+
+                        <a routerLink="/product/:product.product_id" class="mt-4 text-blue-500 hover:underline">View Details</a>
+                    </div>
+                 
+                </div>
+            
+
+
+                
+
+
+              </div>
+              
+          </div>
+
+        </section>
+
+    <app-footer></app-footer>
+
+</body>
